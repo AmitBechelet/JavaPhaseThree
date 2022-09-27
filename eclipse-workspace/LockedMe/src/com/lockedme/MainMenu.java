@@ -1,27 +1,22 @@
 package com.lockedme;
 
+import java.io.File;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
-public class MainMenu implements FileApp {
-
-	public MainMenu() {
-		// TODO Auto-generated constructor stub
-	}
-
-	@Override
-	public void fileDir() {
-		// TODO Auto-generated method stub
-
-	}
-
-	@Override
-	public void fileList() {
-		// TODO Auto-generated method stub
-
-	}
+public class MainMenu { 
 
 	
 	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		//BusinessMenu busObj = new BusinessMenu();
+		mainMenu();
+	}
+
+	
+	public static void mainMenu() {
 		// TODO Auto-generated method stub
 		Scanner sc = new Scanner(System.in);
 		System.out.println("\t Main Menu");
@@ -36,14 +31,13 @@ public class MainMenu implements FileApp {
 			switch(mainoption) {
 				case 1:
 					System.out.println("Here are the available files: ");
-//					fileList();
+					fileList();
 					break;
 				case 2:
-					//Business level ops menu
-					System.out.println("This functionality will be implemented soon.");
+					BusinessMenu.businessMenu();
 					break;
 				case 3:
-					System.out.println("Thank you for using LockedMe.com");
+					System.out.println("Thank you for using LockedMe!");
 					System.out.println("Goodbye!");
 					break;
 				default:
@@ -55,47 +49,30 @@ public class MainMenu implements FileApp {
 		}
 		catch (Exception e) {
 			// TODO: handle exception
-			System.out.println("Invalid input"); //, please enter a valid option from Main Menu. ");
+			System.out.println("Invalid input"+e); //, please enter a valid option from Main Menu. ");
 
 		}
-	}
-
-	@Override
-	public void addFile() {
-		// TODO Auto-generated method stub
 		
 	}
+	
 
-	@Override
-	public void deleteFile() {
+	public static void fileList() {
 		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void searchFile() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void mainMenu() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void businessMenu() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public void businessMenu(int busoption) {
-		// TODO Auto-generated method stub
-		
-	}
+		File maindir = new File("C:\\Users\\amit_\\eclipse-workspace\\LockedMe\\UserFiles\\");
+		File[] userfiles = maindir.listFiles();
+		List<String> showfiles = new ArrayList<String>();
+		Collections.sort(showfiles);
+	    for(File file : userfiles) {
+			if(file.isFile()) {
+				showfiles.add(file.getName());
+	                }
+        }
+		showfiles.forEach(System.out::println);
 
 	}
+
+}
+
+	
 
 
