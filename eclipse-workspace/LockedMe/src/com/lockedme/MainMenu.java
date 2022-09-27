@@ -12,6 +12,8 @@ public class MainMenu {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		//BusinessMenu busObj = new BusinessMenu();
+		System.out.println("Application Name: LockedMe.com  ");
+		System.out.println("Developed by: Amit\n");		
 		mainMenu();
 	}
 
