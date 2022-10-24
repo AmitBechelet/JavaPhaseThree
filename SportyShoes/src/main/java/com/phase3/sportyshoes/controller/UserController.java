@@ -36,10 +36,11 @@ public class UserController {
 	}
 
 	@PostMapping("/users/add")
-	private ResponseEntity saveUser(@RequestBody User user) {
+	public ResponseEntity saveUser(@RequestBody User user) {
 		try {
 			userService.saveOrUpdate(user);
 		}	catch(Exception exception) {
+			System.out.println(exception.getMessage());
 			return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 		}
 		return new ResponseEntity<>("Neew user added with id: "+user.getId(), HttpStatus.CREATED);

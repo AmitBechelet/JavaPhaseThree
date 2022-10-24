@@ -8,8 +8,9 @@ import com.phase3.sportyshoes.model.User;
 
 public interface UserRepository extends CrudRepository<User, Integer> {
 
-	Optional<User> findByName(String name);
+//	Optional<User> findByName(String username);
 
-	Optional<User> findByEmail(String email);
+//	Optional<User> findByEmail(String email);
+	
 
 }

@@ -2,9 +2,12 @@ package com.phase3.sportyshoes.service;
 
 import java.util.*;
 
+import javax.persistence.ManyToOne;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.phase3.sportyshoes.model.Role;
 import com.phase3.sportyshoes.model.User;
 import com.phase3.sportyshoes.repository.UserRepository;
 
@@ -23,15 +26,22 @@ public class UserService {
 		return userRepository.findById(id).get();
 	}
 	
-	public User getUserByName(String name) {
-		return userRepository.findByName(name).get();
-	}
+//	public User getUserByName(String username) {
+//		return userRepository.findByName(username).get();
+//	}
 	
-	public User getUserByEmail(String email) {
-		return userRepository.findByEmail(email).get();
-}
+//	public User getUserByEmail(String email) {
+//		return userRepository.findByEmail(email).get();
+//}
 
 	public void saveOrUpdate(User user) {
 		userRepository.save(user);		
 	}
+
+	
+//	public void saveUserRole() {
+//		Role role = new Role(role);
+//		User user = new User (user);
+//		user.setRole(role);
+//	}
 }
